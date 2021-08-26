@@ -26,7 +26,7 @@ namespace IntroObject
 
         static void Print(Grade mark)
         {
-            Console.WriteLine(mark.value);
+            Console.WriteLine(mark?.value);
         }
 
         static Grade Fill()

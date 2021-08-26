@@ -9,7 +9,6 @@ namespace HelloWorldCLI
         static void Main(string[] args)
         {
             Console.WriteLine(Greeter.Greet("mon"));
-            List<float> tests = new List<float>();
         }
     }
 }
