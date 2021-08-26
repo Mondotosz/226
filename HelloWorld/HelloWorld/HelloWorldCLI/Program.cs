@@ -1,4 +1,6 @@
 ﻿using System;
+using System.Collections.Generic;
+using HelloWorld;
 
 namespace HelloWorldCLI
 {
@@ -6,7 +8,8 @@ namespace HelloWorldCLI
     {
         static void Main(string[] args)
         {
-            Console.WriteLine(HelloWorld.Greeter.Greet("mon"));
+            Console.WriteLine(Greeter.Greet("mon"));
+            List<float> tests = new List<float>();
         }
     }
 }
