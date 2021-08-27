@@ -11,7 +11,7 @@ namespace IntroObject
     {
         static void Main(string[] args)
         {
-            Grade mark = null;
+            Grade mark = new Grade();
 
             Print(mark);
             
