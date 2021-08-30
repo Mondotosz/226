@@ -1,5 +1,6 @@
 ﻿using System;
 using ColorPicker;
+using TintCLI;
 
 namespace ColorPickerCLI
 {
@@ -7,12 +8,20 @@ namespace ColorPickerCLI
     {
         static void Main(string[] args)
         {
-            Color color = new Color(255, 0, 0);
-            printColor(color);
+            Color color;
+            var random = new Random();
+            var bytes = new byte[3];
+            for (int loop = 0; loop < 15; loop++)
+            {
+                random.NextBytes(bytes);
+                color = new Color(bytes[0],bytes[1],bytes[2]);
+                printColor(color);
+            }
+
             void printColor(Color color)
             {
-                Console.WriteLine("#{0:x2}{1:x2}{2:x2}", color.red, color.green, color.blue);
-                Console.WriteLine($"#{Convert.ToString(color.red, 16).PadLeft(2, '0')}{Convert.ToString(color.green, 16).PadLeft(2, '0')}{Convert.ToString(color.blue, 16).PadLeft(2, '0')}");
+                Color complementaryColor = color.ContrastColor();
+                Console.WriteLine(ConsoleExtensions.BackgroundColorCommand(color.red, color.green, color.blue) + ConsoleExtensions.ForegroundColorCommand(complementaryColor.red, complementaryColor.green, complementaryColor.blue) + "#{0:x2}{1:x2}{2:x2}" + ConsoleExtensions.ResetCommand, color.red, color.green, color.blue);
             }
         }
     }
