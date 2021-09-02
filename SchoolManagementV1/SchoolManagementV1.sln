@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SchoolManagement", "SchoolM
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SchoolManagementCLI", "SchoolManagementCLI\SchoolManagementCLI.csproj", "{635D4B4B-4CDF-4371-BC3A-4016A97D5DFA}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SchoolManagementTests", "SchoolManagementTests\SchoolManagementTests.csproj", "{4C661708-CB9A-4ACD-8B93-1EEC2F14134A}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{635D4B4B-4CDF-4371-BC3A-4016A97D5DFA}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{635D4B4B-4CDF-4371-BC3A-4016A97D5DFA}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{635D4B4B-4CDF-4371-BC3A-4016A97D5DFA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4C661708-CB9A-4ACD-8B93-1EEC2F14134A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4C661708-CB9A-4ACD-8B93-1EEC2F14134A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4C661708-CB9A-4ACD-8B93-1EEC2F14134A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4C661708-CB9A-4ACD-8B93-1EEC2F14134A}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
