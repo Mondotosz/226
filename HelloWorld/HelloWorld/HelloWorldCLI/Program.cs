@@ -9,7 +9,7 @@ namespace HelloWorldCLI
         static void Main(string[] args)
         {
             // Console.WriteLine(Greeter.Greet("mon"));
-            int value = 60;
+            int value = 200;
             double wave;
             int padding = 60;
             double amplitude = 7;
@@ -19,6 +19,7 @@ namespace HelloWorldCLI
             {
                 wave = iteration * scale;
                 Console.WriteLine("*".PadLeft(((int)(Math.Sin(wave)*amplitude)) +padding + 1));
+                Console.Beep(137 + (int)Math.Abs((Math.Sin(wave)*amplitude)) * 100, 100);
             }
         }
     }
