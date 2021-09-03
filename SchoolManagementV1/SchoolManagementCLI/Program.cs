@@ -10,8 +10,8 @@ namespace SchoolManagementCLI
             try
             {
                 Student student = new Student("Kenan", "augsburger");
-                student.className = "SI-MI3z";
-                Console.WriteLine($"{student.firstName} {student.lastName} {student.className}");
+                student.ClassName = "SI-MI3z";
+                Console.WriteLine($"{student.FirstName} {student.LastName} {student.ClassName}");
             }
             catch (Exception exception)
             {

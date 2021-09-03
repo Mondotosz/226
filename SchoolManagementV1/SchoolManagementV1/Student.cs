@@ -7,7 +7,7 @@ namespace SchoolManagement
     public class Student
     {
         private string _lastName;
-        public string lastName
+        public string LastName
         {
             get => _lastName;
             set
@@ -16,38 +16,38 @@ namespace SchoolManagement
             }
         }
         private string _firstName;
-        public string firstName
+        public string FirstName
         {
             get => _firstName;
             set
             {
-                if (!IsValidFirsName(value)) throw new Exception("first name requires an uppercase");
+                if (!isValidFirsName(value)) throw new Exception("first name requires an uppercase");
                 _firstName = value;
             }
         }
         private string _classname;
-        public string className
+        public string ClassName
         {
             get => _classname;
             set
             {
-                if (!IsValidClassName(value)) throw new Exception("class name does not comply with our naming scheme");
+                if (!isValidClassName(value)) throw new Exception("class name does not comply with our naming scheme");
                 _classname = value;
             }
         }
-        public Student(string firstName, string lastName)
+        public Student(string FirstName, string lastName)
         {
-            this.lastName = lastName;
-            this.firstName = firstName;
+            this.LastName = lastName;
+            this.FirstName = FirstName;
         }
 
-        private bool IsValidClassName(string className)
+        private bool isValidClassName(string className)
         {
             Regex regex = new Regex(@"^SI-(?:CA|MI|C)[1-4][a-z]$");
             return regex.IsMatch(className);
         }
 
-        private bool IsValidFirsName(string firstName)
+        private bool isValidFirsName(string firstName)
         {
             return char.IsUpper(firstName[0]);
         }
