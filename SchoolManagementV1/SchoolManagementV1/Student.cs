@@ -7,15 +7,14 @@ namespace SchoolManagement
     public class Student
     {
         private string _lastName;
+        private string _firstName;
+        private string _classname;
         public string LastName
         {
             get => _lastName;
             set
-            {
-                _lastName = value.ToUpper();
-            }
+            { _lastName = value.ToUpper(); }
         }
-        private string _firstName;
         public string FirstName
         {
             get => _firstName;
@@ -25,7 +24,6 @@ namespace SchoolManagement
                 _firstName = value;
             }
         }
-        private string _classname;
         public string ClassName
         {
             get => _classname;
@@ -35,6 +33,7 @@ namespace SchoolManagement
                 _classname = value;
             }
         }
+
         public Student(string FirstName, string lastName)
         {
             this.LastName = lastName;

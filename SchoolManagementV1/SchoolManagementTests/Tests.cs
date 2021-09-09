@@ -44,21 +44,6 @@ namespace SchoolManagementTests
         }
 
         [Test]
-        public void Set_Classname_With_Incorrect_Value_Throws_Exception()
-        {
-            List<String> values = new List<String> { "SICA3a", "SI-3a", "SI-CAa", "SI-CA3", "SI-CA3a ", " SI-CA3a", "si-ca3a", "" };
-            Student student = new Student("Pascal", "Hurni");
-            foreach (String value in values)
-            {
-                Assert.Throws<Exception>(delegate
-                {
-                    student.ClassName = value;
-                });
-            }
-
-        }
-
-        [Test]
         public void Set_ClassName_Empty_String()
         {
             Set_ClassName_Throws_Exception("");
