@@ -1,6 +1,4 @@
-﻿using System;
-using System.Dynamic;
-using System.Text.RegularExpressions;
+﻿using System.Text.RegularExpressions;
 
 namespace SchoolManagement
 {
@@ -20,7 +18,7 @@ namespace SchoolManagement
             get => _firstName;
             set
             {
-                if (!isValidFirsName(value)) throw new Exception("first name requires an uppercase");
+                if (!isValidFirsName(value)) throw new BadFirstNameException("first name requires an uppercase");
                 _firstName = value;
             }
         }
@@ -29,7 +27,7 @@ namespace SchoolManagement
             get => _classname;
             set
             {
-                if (!isValidClassName(value)) throw new Exception("class name does not comply with our naming scheme");
+                if (!isValidClassName(value)) throw new BadClassNameException("class name does not comply with our naming scheme");
                 _classname = value;
             }
         }

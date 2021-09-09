@@ -24,7 +24,7 @@ namespace SchoolManagementTests
         [Test]
         public void Set_First_Name_With_Incorrect_Value_Throws_Exception()
         {
-            Assert.Throws<Exception>(delegate
+            Assert.Throws<BadFirstNameException>(delegate
             {
                 Student student = new Student("pascal", "Hurni");
             });
@@ -85,7 +85,7 @@ namespace SchoolManagementTests
         public void Set_ClassName_Throws_Exception(string value)
         {
             Student student = new Student("Pascal", "Hurni");
-            Assert.Throws<Exception>(delegate
+            Assert.Throws<BadClassNameException>(delegate
             {
                 student.ClassName = value;
             });

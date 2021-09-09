@@ -15,7 +15,13 @@ namespace SchoolManagementCLI
             }
             catch (Exception exception)
             {
-                Console.WriteLine(exception.Message);
+                if (exception is BadClassNameException)
+                {
+                    Console.WriteLine("Votre nom de classe n'est pas conforme à la nomenclature!");
+                } else if(exception is BadFirstNameException){
+                    Console.WriteLine("Le prenom ne correspond pas a la nomeclature!");
+                } 
+                
             }
         }
     }
