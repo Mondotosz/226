@@ -9,7 +9,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SchoolManagementCLI", "Scho
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SchoolManagementTests", "SchoolManagementTests\SchoolManagementTests.csproj", "{4C661708-CB9A-4ACD-8B93-1EEC2F14134A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SchoolManagementForm", "SchoolManagementForm\SchoolManagementForm.csproj", "{CBB16A5F-21FC-4E0F-A9AA-55655A789D9B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SchoolManagementForm", "SchoolManagementForm\SchoolManagementForm.csproj", "{CBB16A5F-21FC-4E0F-A9AA-55655A789D9B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SchoolManagementWPF", "SchoolManagementWPF\SchoolManagementWPF.csproj", "{3B777DB0-56DE-480A-956D-8B3D0E71D067}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -33,6 +35,10 @@ Global
 		{CBB16A5F-21FC-4E0F-A9AA-55655A789D9B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{CBB16A5F-21FC-4E0F-A9AA-55655A789D9B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{CBB16A5F-21FC-4E0F-A9AA-55655A789D9B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3B777DB0-56DE-480A-956D-8B3D0E71D067}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3B777DB0-56DE-480A-956D-8B3D0E71D067}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3B777DB0-56DE-480A-956D-8B3D0E71D067}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3B777DB0-56DE-480A-956D-8B3D0E71D067}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

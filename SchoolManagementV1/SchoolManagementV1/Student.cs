@@ -1,4 +1,5 @@
-﻿using System.Text.RegularExpressions;
+﻿using System;
+using System.Text.RegularExpressions;
 
 namespace SchoolManagement
 {
@@ -37,6 +38,16 @@ namespace SchoolManagement
             this.LastName = lastName;
             this.FirstName = FirstName;
         }
+        public Student(string FirstName, string lastName, string className)
+        {
+            this.LastName = lastName;
+            this.FirstName = FirstName;
+            this.ClassName = className;
+        }
+
+        public override String ToString(){
+            return $"{FirstName}, {LastName}, {ClassName}";
+        }
 
         private bool isValidClassName(string className)
         {
@@ -46,7 +57,7 @@ namespace SchoolManagement
 
         private bool isValidFirsName(string firstName)
         {
-            return char.IsUpper(firstName[0]);
+            return !string.IsNullOrEmpty(firstName) ? char.IsUpper(firstName[0]) : false;
         }
     }
 }
