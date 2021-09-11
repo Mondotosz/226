@@ -12,9 +12,7 @@ namespace SchoolManagementForm
 
         [STAThread]
         static void Main()
-        {
-            List<Student> students;
-            
+        {            
             Application.SetHighDpiMode(HighDpiMode.SystemAware);
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
