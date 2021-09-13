@@ -3,21 +3,35 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:local="clr-namespace:SchoolManagementWPF"
+        xmlns:local="clr-namespace:SchoolManagementWPF" xmlns:viewmodel="clr-namespace:SchoolManagementWPF.ViewModel"
         mc:Ignorable="d"
-        Title="School management" Height="auto" Width="auto">
+        Height="375" Width="400"
+        Background="#3F3F46"
+        WindowStyle="None"
+        AllowsTransparency="True"
+        ResizeMode="CanResize"
+        WindowState="{Binding CurrentWindowState,Mode=TwoWay}">
+    <Window.DataContext>
+        <viewmodel:MainWindow/>
+    </Window.DataContext>
     <Grid>
         <Grid.RowDefinitions>
-            <RowDefinition Height="*"></RowDefinition>
-            <RowDefinition Height="50">
-
-            </RowDefinition>
+            <RowDefinition Height="25"/>
+            <RowDefinition/>
         </Grid.RowDefinitions>
-        <Grid>
-            <Grid.RowDefinitions>
-                <RowDefinition></RowDefinition>
-            </Grid.RowDefinitions>
-            <Label Grid.Row="1">Student list</Label>
-        </Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <Border Grid.Column="1" Background="#27272A">
+            <Grid HorizontalAlignment="Stretch">
+                <Label Content="School Management" Foreground="#E4E4E7" FontWeight="SemiBold"/>
+                <StackPanel HorizontalAlignment="Right" Orientation="Horizontal">
+                    <Button Command="{Binding BtnMinimize}" Width="20" Height="20" BorderThickness="0" Background="Transparent" Foreground="#E4E4E7" Content="🗕" Padding="0,0,0,5"/>
+                    <Button Command="{Binding BtnMaximize}" Name="btnMaximize" Width="20" Height="20" BorderThickness="0" Background="Transparent" Foreground="#E4E4E7" Content="'🗖🗗'"/>
+                    <Button Width="20" Height="20" BorderThickness="0" Background="Transparent" Foreground="#E4E4E7" Content="🗙"/>
+                </StackPanel>
+            </Grid>
+        </Border>
     </Grid>
+
 </Window>
