@@ -16,10 +16,10 @@ namespace SchoolManagementForm
             InitializeComponent();
         }
 
-        public FrmAddStudent(Student student){
+        public FrmAddStudent(Student student, bool canEdit){
             InitializeComponent();
-            txtFirstName.Enabled = false;
-            txtLastName.Enabled = false;
+            txtFirstName.Enabled = canEdit;
+            txtLastName.Enabled = canEdit;
             txtFirstName.Text = student.FirstName;
             txtLastName.Text = student.LastName;
             txtClassName.Text = student.ClassName;

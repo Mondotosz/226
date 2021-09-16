@@ -45,8 +45,14 @@ namespace SchoolManagement
             this.ClassName = className;
         }
 
-        public override String ToString(){
-            return $"{FirstName}, {LastName}, {ClassName}";
+        public override String ToString()
+        {
+            return $"{FirstName} {LastName} ({ClassName})";
+        }
+
+        public String Serialize()
+        {
+            return $"{FirstName},{LastName},{ClassName}";
         }
 
         private bool isValidClassName(string className)
