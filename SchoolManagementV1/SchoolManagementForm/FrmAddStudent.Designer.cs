@@ -44,7 +44,7 @@ namespace SchoolManagementForm
             this.btnConfirm.Location = new System.Drawing.Point(13, 134);
             this.btnConfirm.Name = "btnConfirm";
             this.btnConfirm.Size = new System.Drawing.Size(151, 31);
-            this.btnConfirm.TabIndex = 0;
+            this.btnConfirm.TabIndex = 3;
             this.btnConfirm.Text = "OK";
             this.btnConfirm.UseVisualStyleBackColor = true;
             this.btnConfirm.Click += new System.EventHandler(this.AddStudent);
@@ -54,21 +54,21 @@ namespace SchoolManagementForm
             this.txtLastName.Location = new System.Drawing.Point(90, 18);
             this.txtLastName.Name = "txtLastName";
             this.txtLastName.Size = new System.Drawing.Size(270, 23);
-            this.txtLastName.TabIndex = 1;
+            this.txtLastName.TabIndex = 0;
             // 
             // txtFirstName
             // 
             this.txtFirstName.Location = new System.Drawing.Point(90, 53);
             this.txtFirstName.Name = "txtFirstName";
             this.txtFirstName.Size = new System.Drawing.Size(270, 23);
-            this.txtFirstName.TabIndex = 2;
+            this.txtFirstName.TabIndex = 1;
             // 
             // txtClassName
             // 
             this.txtClassName.Location = new System.Drawing.Point(90, 90);
             this.txtClassName.Name = "txtClassName";
             this.txtClassName.Size = new System.Drawing.Size(157, 23);
-            this.txtClassName.TabIndex = 3;
+            this.txtClassName.TabIndex = 2;
             // 
             // lblLastName
             // 
@@ -102,7 +102,7 @@ namespace SchoolManagementForm
             this.btnCancel.Location = new System.Drawing.Point(214, 134);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(152, 31);
-            this.btnCancel.TabIndex = 7;
+            this.btnCancel.TabIndex = 4;
             this.btnCancel.Text = "Cancel";
             this.btnCancel.UseVisualStyleBackColor = true;
             this.btnCancel.Click += new System.EventHandler(this.Cancel);

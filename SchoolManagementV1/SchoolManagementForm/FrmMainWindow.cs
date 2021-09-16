@@ -14,8 +14,7 @@ namespace SchoolManagementForm
         private void showAddStudentWindow(object sender, EventArgs e)
         {
             FrmAddStudent childForm = new FrmAddStudent();
-            childForm.ShowDialog();
-            if (childForm.DialogResult == DialogResult.OK)
+            if (childForm.ShowDialog() == DialogResult.OK)
             {
                 lstStudents.Items.Add(childForm.Student);
             }
@@ -33,8 +32,7 @@ namespace SchoolManagementForm
             if (lstStudents.SelectedItem != null)
             {
                 FrmAddStudent childForm = new FrmAddStudent((Student)lstStudents.SelectedItem);
-                childForm.ShowDialog();
-                if (childForm.DialogResult == DialogResult.OK)
+                if ( childForm.ShowDialog() == DialogResult.OK)
                 {
                     lstStudents.Items[lstStudents.SelectedIndex] = childForm.Student;
                 }
