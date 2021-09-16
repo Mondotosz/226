@@ -16,6 +16,15 @@ namespace SchoolManagementForm
             InitializeComponent();
         }
 
+        public FrmAddStudent(Student student){
+            InitializeComponent();
+            txtFirstName.Enabled = false;
+            txtLastName.Enabled = false;
+            txtFirstName.Text = student.FirstName;
+            txtLastName.Text = student.LastName;
+            txtClassName.Text = student.ClassName;
+        }
+
         private void AddStudent(object sender, EventArgs e)
         {
             try

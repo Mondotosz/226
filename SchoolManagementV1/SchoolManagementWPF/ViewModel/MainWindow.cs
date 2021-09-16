@@ -27,7 +27,7 @@ namespace SchoolManagementWPF.ViewModel
         }
         public MainWindow()
         {
-
+            
         }
 
         public ICommand BtnMaximize
@@ -38,11 +38,6 @@ namespace SchoolManagementWPF.ViewModel
         {
             get { return new RelayCommand<object>(param => onBtnMinimize()); }
         }
-        public ICommand BtnClose
-        {
-            get { return new RelayCommand<object>(param => onBtnClose()); }
-        }
-
         void onBtnMaximize()
         {
             CurrentWindowState = CurrentWindowState == WindowState.Maximized ? WindowState.Normal : WindowState.Maximized;
@@ -50,10 +45,6 @@ namespace SchoolManagementWPF.ViewModel
         void onBtnMinimize()
         {
             CurrentWindowState = WindowState.Minimized;
-        }
-        void onBtnClose()
-        {
-            
         }
     }
 }

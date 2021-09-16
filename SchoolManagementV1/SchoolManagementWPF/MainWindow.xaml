@@ -22,13 +22,13 @@
         <Grid.ColumnDefinitions>
             <ColumnDefinition/>
         </Grid.ColumnDefinitions>
-        <Border Grid.Column="1" Background="#27272A">
+        <Border Grid.Column="1" Background="#27272A" MouseDown="borderMouseDown">
             <Grid HorizontalAlignment="Stretch">
                 <Label Content="School Management" Foreground="#E4E4E7" FontWeight="SemiBold"/>
                 <StackPanel HorizontalAlignment="Right" Orientation="Horizontal">
                     <Button Command="{Binding BtnMinimize}" Width="20" Height="20" BorderThickness="0" Background="Transparent" Foreground="#E4E4E7" Content="🗕" Padding="0,0,0,5"/>
                     <Button Command="{Binding BtnMaximize}" Name="btnMaximize" Width="20" Height="20" BorderThickness="0" Background="Transparent" Foreground="#E4E4E7" Content="'🗖🗗'"/>
-                    <Button Width="20" Height="20" BorderThickness="0" Background="Transparent" Foreground="#E4E4E7" Content="🗙"/>
+                    <Button Click="closeWindow" Width="20" Height="20" BorderThickness="0" Background="Transparent" Foreground="#E4E4E7" Content="🗙"/>
                 </StackPanel>
             </Grid>
         </Border>

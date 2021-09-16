@@ -42,6 +42,7 @@ namespace SchoolManagementForm
             this.lstStudents.Name = "lstStudents";
             this.lstStudents.Size = new System.Drawing.Size(382, 274);
             this.lstStudents.TabIndex = 0;
+            this.lstStudents.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.editStudent);
             // 
             // btnAddStudent
             // 

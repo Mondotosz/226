@@ -27,5 +27,18 @@ namespace SchoolManagementForm
             lstStudents.Items.Remove(lstStudents.SelectedItem);
 
         }
+
+        private void editStudent(object sender, MouseEventArgs e)
+        {
+            if (lstStudents.SelectedItem != null)
+            {
+                FrmAddStudent childForm = new FrmAddStudent((Student)lstStudents.SelectedItem);
+                childForm.ShowDialog();
+                if (childForm.DialogResult == DialogResult.OK)
+                {
+                    lstStudents.Items[lstStudents.SelectedIndex] = childForm.Student;
+                }
+            }
+        }
     }
 }

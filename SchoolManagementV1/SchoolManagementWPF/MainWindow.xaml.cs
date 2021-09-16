@@ -24,5 +24,17 @@ namespace SchoolManagementWPF
         {
             InitializeComponent();
         }
+
+        private void borderMouseDown(object sender, MouseButtonEventArgs e)
+        {
+            if (e.LeftButton == MouseButtonState.Pressed)
+            {
+                DragMove();
+            }
+        }
+
+        private void closeWindow(object sender, EventArgs e){
+            Close();
+        }
     }
 }
