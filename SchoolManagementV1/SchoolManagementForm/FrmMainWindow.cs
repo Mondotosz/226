@@ -13,12 +13,12 @@ namespace SchoolManagementForm
         {
             InitializeComponent();
             // TODO: Find a way to cast
-            // Storage storage = new Storage("./students.csv");
-            // List<Student> students = storage.Load();
-            // foreach (Student student in students)
-            // {
-            //     lstStudents.Items.Add(student);
-            // }
+            Storage<Student> storage = new Storage<Student>("./students.csv");
+            List<Student> students = storage.Load();
+            foreach (Student student in students)
+            {
+                lstStudents.Items.Add(student);
+            }
         }
 
         private void showAddStudentWindow(object sender, EventArgs e)
@@ -51,8 +51,8 @@ namespace SchoolManagementForm
         }
         private void lstStudentsUpdate()
         {
-            Storage storage = new Storage("./students.csv");
-            storage.Save(lstStudents.Items.Cast<Object>().ToList());
+            Storage<Student> storage = new Storage<Student>("./students.csv");
+            storage.Save(lstStudents.Items.Cast<Student>().ToList());
         }
     }
 }

@@ -1,5 +1,7 @@
 ﻿using System;
 using System.Text.RegularExpressions;
+using CsvHelper.Configuration;
+using CsvHelper.Configuration.Attributes;
 
 namespace SchoolManagement
 {
@@ -8,12 +10,14 @@ namespace SchoolManagement
         private string _lastName;
         private string _firstName;
         private string _classname;
+        [Name("LastName")]
         public string LastName
         {
             get => _lastName;
             set
             { _lastName = value.ToUpper(); }
         }
+        [Name("FirstName")]
         public string FirstName
         {
             get => _firstName;
@@ -23,6 +27,7 @@ namespace SchoolManagement
                 _firstName = value;
             }
         }
+        [Name("ClassName")]
         public string ClassName
         {
             get => _classname;
@@ -65,5 +70,16 @@ namespace SchoolManagement
         {
             return !string.IsNullOrEmpty(firstName) ? char.IsUpper(firstName[0]) : false;
         }
+    }
+
+    public sealed class StudentMap : ClassMap<Student>
+    {
+        public StudentMap()
+        {
+            Map(m => m.FirstName);
+            Map(m => m.LastName);
+            Map(m => m.ClassName);
+        }
+
     }
 }

@@ -7,34 +7,42 @@ using CsvHelper;
 
 namespace SchoolManagement
 {
-    public class Storage
+    public class Storage<T>
     {
-        private string _path;
+        private string _filePath;
 
-        public String Path
+        public String FilePath
         {
-            get => _path;
+            get => _filePath;
             set
             {
-                _path = value;
+                _filePath = value;
             }
         }
         public Storage(string path)
         {
-            Path = path;
+            FilePath = path;
         }
 
-        public List<Object> Load()
+        public List<T> Load()
         {
-            using (var reader = new StreamReader(_path))
-            using (var csv = new CsvReader(reader, CultureInfo.InvariantCulture))
+            List<T> records = new List<T>();
+            if (File.Exists(_filePath))
             {
-                return csv.GetRecords<dynamic>().Cast<Object>().ToList();
+                using (var reader = new StreamReader(_filePath))
+                using (var csv = new CsvReader(reader, CultureInfo.InvariantCulture))
+                {
+                    csv.Context.RegisterClassMap<TMap>();
+                    records = csv.GetRecords<T>()
+                        .Cast<T>()
+                        .ToList();
+                }
             }
+            return records;
         }
-        public void Save(List<Object> content)
+        public void Save(List<T> content)
         {
-            using (var writer = new StreamWriter(_path))
+            using (var writer = new StreamWriter(_filePath))
             using (var csv = new CsvWriter(writer, CultureInfo.InvariantCulture))
             {
                 csv.WriteRecords(content);
