@@ -15,5 +15,10 @@ namespace PizzaStore
         {
             get => _price;
         }
+
+        public string Name
+        {
+            get => _name;
+        }
     }
 }

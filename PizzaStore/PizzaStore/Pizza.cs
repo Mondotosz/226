@@ -19,6 +19,11 @@ namespace PizzaStore
             _ingredients.Add(ingredient);
         }
 
+        public override string ToString()
+        {
+            return $"{_size.Name}:{string.Join(",", _ingredients.Select(ingredient => ingredient.Name)) }";
+        }
+
         public double Price
         {
             get
