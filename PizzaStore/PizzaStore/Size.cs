@@ -5,7 +5,8 @@ namespace PizzaStore
         private string _name;
         private double _price;
 
-        public Size(string name, double price){
+        public Size(string name, double price)
+        {
             _name = name;
             _price = price;
         }
