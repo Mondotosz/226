@@ -6,11 +6,12 @@ namespace PizzaStore
     public class Pizza
     {
         private Size _size;
-        private List<Ingredient> _ingredients = new List<Ingredient>();
+        private List<Ingredient> _ingredients;
 
         public Pizza(Size size)
         {
             _size = size;
+            _ingredients = new List<Ingredient>();
         }
 
         public void AddIngredient(Ingredient ingredient)
