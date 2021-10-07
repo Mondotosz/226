@@ -10,18 +10,18 @@ namespace PizzaStoreTests
         [Test]
         public void Correct_String_One_Pizza()
         {
-            Order order = new Order();
+            Order order = new Order("test client");
             Pizza pizza1 = new Pizza(new Size("regular", 12));
             pizza1.AddIngredient(new Ingredient("Capers", 2));
             pizza1.AddIngredient(new Ingredient("Olives", 2));
             order.AddPizza(pizza1);
-            Assert.AreEqual("regular:Capers,Olives", order.ToString());
+            Assert.AreEqual("test client\n\nregular:Capers,Olives", order.ToString());
         }
 
         [Test]
         public void Correct_String_Multiple_Pizzas()
         {
-            Order order = new Order();
+            Order order = new Order("test client");
             Pizza pizza1 = new Pizza(new Size("regular", 12));
             Pizza pizza2 = new Pizza(new Size("Family", 19));
             pizza1.AddIngredient(new Ingredient("Capers", 2));
@@ -30,13 +30,13 @@ namespace PizzaStoreTests
             pizza2.AddIngredient(new Ingredient("Pineapple", 2));
             order.AddPizza(pizza1);
             order.AddPizza(pizza2);
-            Assert.AreEqual("regular:Capers,Olives\nFamily:Merguez,Pineapple", order.ToString());
+            Assert.AreEqual("test client\n\nregular:Capers,Olives\nFamily:Merguez,Pineapple", order.ToString());
         }
 
         [Test]
         public void Correct_Price_One_Pizza()
         {
-            Order order = new Order();
+            Order order = new Order("test client");
             Pizza pizza1 = new Pizza(new Size("regular", 12));
             pizza1.AddIngredient(new Ingredient("Capers", 2));
             pizza1.AddIngredient(new Ingredient("Olives", 2));
@@ -47,7 +47,7 @@ namespace PizzaStoreTests
         [Test]
         public void Correct_Price_Multiple_Pizzas()
         {
-            Order order = new Order();
+            Order order = new Order("test client");
             Pizza pizza1 = new Pizza(new Size("regular", 12));
             Pizza pizza2 = new Pizza(new Size("Family", 19));
             pizza1.AddIngredient(new Ingredient("Capers", 2));
