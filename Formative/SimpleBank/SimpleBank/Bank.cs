@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 
 namespace SimpleBank
 {
@@ -8,8 +9,13 @@ namespace SimpleBank
         private List<Account> _accounts;
         private List<RecurringPayment> _recurringPayments;
         
+        public Bank(){
+            _accounts = new List<Account>();
+            _recurringPayments = new List<RecurringPayment>();
+        }
+
         public double TotalBalance {
-            get { throw new NotImplementedException();}
+            get => _accounts.Sum(account => account.Balance);
         }
 
         public void TriggerPayment(DateTime dueDate){

@@ -11,18 +11,19 @@ namespace SimpleBank
 
         public RecurringPayment(Account account, double amount)
         {
-            throw new NotImplementedException();
+            _account = account;
+            _amount = amount;
         }
 
         public DateTime FirstOccurrence
         {
-            get { throw new NotImplementedException(); }
+            get => _firstOccurrence;
             set { throw new NotImplementedException(); }
         }
 
         public TimeSpan RecurringDuration
         {
-            get { throw new NotImplementedException(); }
+            get => _recurringDuration;
             set { throw new NotImplementedException(); }
         }
 
