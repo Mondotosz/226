@@ -18,7 +18,7 @@ namespace SimpleBank
             get => _accounts.Sum(account => account.Balance);
         }
 
-        public void TriggerPayment(DateTime dueDate){
+        public void TriggerPayments(DateTime dueDate){
             throw new NotImplementedException();
         }
     }
