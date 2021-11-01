@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net.NetworkInformation;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -8,11 +9,9 @@ namespace FlightStats
 {
     public class AeroConverter
     {
-        public const int CELSIUS_TO_KELVIN_DIFF = 273;
-        #region private attributes
-        #endregion region attributes
-
-        #region public methods
+        public const int ABSOLUTE_ZERO = 273;
+        public const int FAHRENHEIT_WATER_FREEZING_POINT = 32;
+        
         /// <summary>
         /// This method converts Celsius value in Kelvin value
         /// Ref : Celsius + 273 = Kelvin
@@ -22,7 +21,7 @@ namespace FlightStats
         /// <returns>Celsius converted in Kelvin with precision of 2 decimal places (12.34)</returns>
         public double ConvertCelsiusToKelvin(double temperatureInCelsius)
         {
-            return temperatureInCelsius + CELSIUS_TO_KELVIN_DIFF;
+            return temperatureInCelsius + ABSOLUTE_ZERO;
         }
 
         /// <summary>
@@ -34,7 +33,7 @@ namespace FlightStats
         /// <returns>Fahrenheit converted in Celsius with precision of 2 decimal places (12.34)</returns>
         public double ConvertFahrenheitToCelsius(double temperatureInFahrenheit)
         {
-            return Math.Round(((temperatureInFahrenheit - 32) * 5 / 9), 2);
+            return Math.Round(((temperatureInFahrenheit - FAHRENHEIT_WATER_FREEZING_POINT) * 5 / 9), 2);
         }
 
         /// <summary>
@@ -58,8 +57,7 @@ namespace FlightStats
         /// <returns>Local speed of sound in knots with precision of 2 decimal places (12.34)</returns>
         public double LocalSpeedOfSound(double temperatureInKelvin)
         {
-            return Math.Round(38.94 * Math.Pow(temperatureInKelvin,0.5), 2);
+            return Math.Round(38.94 * Math.Sqrt(temperatureInKelvin), 2);
         }
-        #endregion public methods
     }
 }
