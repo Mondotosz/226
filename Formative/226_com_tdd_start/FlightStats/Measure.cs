@@ -42,7 +42,7 @@ namespace FlightStats
         {
 
             AeroConverter aeroConverter = new AeroConverter();
-            _temperatureInCelsius =  aeroConverter.ConvertFahrenheitToCelsius(_temperatureInFahrenheit);
+            _temperatureInCelsius ??= aeroConverter.ConvertFahrenheitToCelsius(_temperatureInFahrenheit);
             _temperatureInKelvin =  aeroConverter.ConvertFahrenheitToKelvin(_temperatureInFahrenheit);
             _localSpeedOfSound =  aeroConverter.LocalSpeedOfSound(_temperatureInKelvin);
             return $"{_temperatureInFahrenheit.ToString("0.00")};{_temperatureInCelsius.ToString("0.00")};{_temperatureInKelvin.ToString("0.00")};{_localSpeedOfSound.ToString("0.00")}";

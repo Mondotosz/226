@@ -11,6 +11,10 @@ namespace FlightStats
     {
         public const int ABSOLUTE_ZERO = 273;
         public const int FAHRENHEIT_WATER_FREEZING_POINT = 32;
+        public const int NINE = 9;
+        public const int FIVE = 5;
+        public const double THIRTY_EIGHT_DOT_NINETY_FOUR = 38.94;
+        public const int DECIMAL_PLACES = 2;
         
         /// <summary>
         /// This method converts Celsius value in Kelvin value
@@ -33,7 +37,7 @@ namespace FlightStats
         /// <returns>Fahrenheit converted in Celsius with precision of 2 decimal places (12.34)</returns>
         public double ConvertFahrenheitToCelsius(double temperatureInFahrenheit)
         {
-            return Math.Round(((temperatureInFahrenheit - FAHRENHEIT_WATER_FREEZING_POINT) * 5 / 9), 2);
+            return Math.Round(((temperatureInFahrenheit - FAHRENHEIT_WATER_FREEZING_POINT) * FIVE / NINE), DECIMAL_PLACES);
         }
 
         /// <summary>
@@ -57,7 +61,7 @@ namespace FlightStats
         /// <returns>Local speed of sound in knots with precision of 2 decimal places (12.34)</returns>
         public double LocalSpeedOfSound(double temperatureInKelvin)
         {
-            return Math.Round(38.94 * Math.Sqrt(temperatureInKelvin), 2);
+            return Math.Round(THIRTY_EIGHT_DOT_NINETY_FOUR * Math.Sqrt(temperatureInKelvin), DECIMAL_PLACES);
         }
     }
 }
