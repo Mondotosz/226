@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 
 namespace Shopiz
 {
@@ -9,6 +10,10 @@ namespace Shopiz
     public class Cart
     {
         #region private attributes
+        private string _id;
+        private string _name;
+        private string _currency;
+        private List<CartItem> _items;
         #endregion private attributes
 
         #region public methods
@@ -20,7 +25,10 @@ namespace Shopiz
         /// <param name="cartItems">collection of cart's items. If null, balance will be set to zero.</param>
         public Cart(string id, string name, List<CartItem> cartItems = null)
         {
-            throw new NotImplementedException();
+            _id = id;
+            _name = name;
+            _items = cartItems is null ? new List<CartItem>() : cartItems;
+            _currency = "CHF";
         }
 
         /// <summary>
@@ -28,10 +36,7 @@ namespace Shopiz
         /// </summary>
         public string Id
         {
-            get
-            {
-                throw new NotImplementedException();
-            }
+            get => _id;
         }
 
         /// <summary>
@@ -39,21 +44,15 @@ namespace Shopiz
         /// </summary>
         public string Name
         {
-            get
-            {
-                throw new NotImplementedException();
-            }
+            get => _name;
         }
 
         /// <summary>
-        /// This property gets the cart's name.
+        /// This property gets the cart's items.
         /// </summary>
         public List<CartItem> CartItems
         {
-            get
-            {
-                throw new NotImplementedException();
-            }
+            get => _items;
         }
 
         /// <summary>
@@ -61,10 +60,7 @@ namespace Shopiz
         /// </summary>
         public double Balance
         {
-            get
-            {
-                throw new NotImplementedException();
-            }
+            get => _items.Sum(item => item.UnitPrice);
         }
 
         /// <summary>
@@ -72,10 +68,7 @@ namespace Shopiz
         /// </summary>
         public string Currency
         {
-            get
-            {
-                throw new NotImplementedException();
-            }
+            get => _currency;
         }
 
         /// <summary>
@@ -84,7 +77,7 @@ namespace Shopiz
         /// <param name="cartItemsToAdd">List of cart items to add</param>
         public void AddItems(List<CartItem> cartItemsToAdd)
         {
-            throw new NotImplementedException();
+            _items.AddRange(cartItemsToAdd);
         }
 
         /// <summary>
@@ -92,8 +85,8 @@ namespace Shopiz
         /// </summary>
         public void Empty()
         {
-            throw new NotImplementedException();
-
+            if (_items.Count <= 0) throw new EmptyCartException();
+            _items.Clear();
         }
         #endregion public methods
 

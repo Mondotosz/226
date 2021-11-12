@@ -8,6 +8,10 @@ namespace Shopiz
     public class CartItem
     {
         #region private attributes
+        private string _id;
+        private string _longDescription;
+        private double _unitPrice;
+        private string _currency;
         #endregion private attributes
 
         #region public methods
@@ -19,7 +23,10 @@ namespace Shopiz
         /// <param name="unitPrice"></param>
         public CartItem(string id, string longDescription, double unitPrice)
         {
-            throw new NotImplementedException();
+            _id = id;
+            _longDescription = longDescription;
+            _unitPrice = unitPrice;
+            _currency = "CHF";
         }
 
         /// <summary>
@@ -27,10 +34,7 @@ namespace Shopiz
         /// </summary>
         public string Id
         {
-            get
-            {
-                throw new NotImplementedException();
-            }
+            get => _id;
         }
 
         /// <summary>
@@ -38,10 +42,7 @@ namespace Shopiz
         /// </summary>
         public string LongDescription
         {
-            get
-            {
-                throw new NotImplementedException();
-            }
+            get => _longDescription;
         }
 
         /// <summary>
@@ -50,14 +51,12 @@ namespace Shopiz
         /// <exception cref="TooSmallValueException">When unit price to set is smaller than 1.00</exception>
         public double UnitPrice
         {
-            get
-            {
-                throw new NotImplementedException();
-            }
+            get => _unitPrice;
 
             set
             {
-                throw new NotImplementedException();
+                if(value < 1.00) throw new TooSmallValueException();
+                _unitPrice = value;
             }
         }
 
@@ -66,10 +65,7 @@ namespace Shopiz
         /// </summary>
         public string Currency
         {
-            get
-            {
-                throw new NotImplementedException();
-            }
+            get => _currency;
         }
 
         #endregion public methods
