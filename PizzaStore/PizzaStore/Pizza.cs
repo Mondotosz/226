@@ -3,7 +3,7 @@ using System.Linq;
 
 namespace PizzaStore
 {
-    public class Pizza
+    public class Pizza : Food
     {
         private Size _size;
         private List<Ingredient> _ingredients;
@@ -24,7 +24,7 @@ namespace PizzaStore
             return $"{_size.Name}:{string.Join(",", _ingredients.Select(ingredient => ingredient.Name)) }";
         }
 
-        public double Price
+        public override double Price
         {
             get
             {

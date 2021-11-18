@@ -6,18 +6,18 @@ namespace PizzaStore
 
     public class Order
     {
-        private List<Pizza> _pizzas;
+        private List<Food> _foods;
         private string _client;
 
         public Order(string client)
         {
-            _pizzas = new List<Pizza>();
+            _foods = new List<Food>();
             _client = client;
         }
 
-        public void AddPizza(Pizza pizza)
+        public void AddPizza(Food food)
         {
-            _pizzas.Add(pizza);
+            _foods.Add(food);
         }
 
         public override string ToString()
@@ -26,12 +26,12 @@ namespace PizzaStore
         }
 
         private string generateReceipt(){
-            return $"{_client}\n\n{string.Join("\n", _pizzas.Select(pizza => pizza.ToString()))}";
+            return $"{_client}\n\n{string.Join("\n", _foods.Select(food => food.ToString()))}";
         }
 
         public double Price
         {
-            get { return _pizzas.Sum(pizza => pizza.Price); }
+            get { return _foods.Sum(food => food.Price); }
         }
 
         public string Receipt
