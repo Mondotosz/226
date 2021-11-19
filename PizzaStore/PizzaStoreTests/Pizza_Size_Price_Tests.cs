@@ -3,7 +3,7 @@ using PizzaStore;
 
 namespace PizzaStoreTests
 {
-    public class Pizza_Size_Price_Tests
+    public class Order_Price_Tests
     {
         [Test]
         public void Pizza_With_Size_Regular_Has_Correct_Price()
