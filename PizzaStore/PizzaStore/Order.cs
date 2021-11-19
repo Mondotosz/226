@@ -15,7 +15,7 @@ namespace PizzaStore
             _client = client;
         }
 
-        public void AddPizza(Food food)
+        public void AddFood(Food food)
         {
             _foods.Add(food);
         }
