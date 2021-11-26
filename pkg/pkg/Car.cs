@@ -17,7 +17,7 @@ namespace pkg
 
         public override string ToString()
         {
-            throw new NotImplementedException();
+            return $"Car {_color} {Size}";
         }
     }
 }

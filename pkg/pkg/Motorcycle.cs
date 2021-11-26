@@ -21,7 +21,7 @@ namespace pkg
 
         public override string ToString()
         {
-            throw new NotImplementedException();
+            return $"Motorcycle {_brand} {Size}";
         }
     }
 }
