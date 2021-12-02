@@ -35,7 +35,7 @@ namespace pkgTests
         [Test]
         public void TestParkAVehicleWithoutEnoughCapacity()
         {
-            Assert.Throws<ParkingLotException>(() =>
+            Assert.Throws<InsufficientVacancyException>(() =>
             {
                 ParkingLot flon = new ParkingLot(0.5);
                 Vehicle christine = new Vehicle(1.0);
@@ -61,7 +61,7 @@ namespace pkgTests
         [Test]
         public void TestParkSeveralVehicleExceedingCapacity()
         {
-            Assert.Throws<ParkingLotException>(() =>
+            Assert.Throws<InsufficientVacancyException>(() =>
             {
                 ParkingLot flon = new ParkingLot(10.0);
 
