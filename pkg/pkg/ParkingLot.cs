@@ -15,14 +15,14 @@ namespace pkg
             _parkedVehicles = new List<Vehicle>();
         }
 
-        public void Park(Vehicle vehicle)
+        public virtual void Park(Vehicle vehicle)
         {
             if (Vacancy < vehicle.Size) throw new InsufficientVacancyException();
             if (_parkedVehicles.Contains(vehicle)) throw new VehicleAlreadyParkedException();
             _parkedVehicles.Add(vehicle);
         }
 
-        public void Vacate(Vehicle vehicle)
+        public virtual void Vacate(Vehicle vehicle)
         {
             if (!_parkedVehicles.Contains(vehicle)) throw new VehicleNotParkedException();
             _parkedVehicles.Remove(vehicle);
@@ -35,16 +35,7 @@ namespace pkg
     {
 
     }
-    public class InsufficientVacancyException : ParkingLotException
-    {
-
-    }
-    public class VehicleNotParkedException : ParkingLotException
-    {
-
-    }
-    public class VehicleAlreadyParkedException : ParkingLotException
-    {
-
-    }
+    public class InsufficientVacancyException : ParkingLotException { }
+    public class VehicleNotParkedException : ParkingLotException { }
+    public class VehicleAlreadyParkedException : ParkingLotException { }
 }
