@@ -29,8 +29,14 @@ namespace pkg
 
         public override void Park(Vehicle vehicle)
         {
-            base.Park(vehicle);
-            ChooseValet().Drive(vehicle);
+            try
+            {
+                ChooseValet().Drive(vehicle);
+                base.Park(vehicle);
+            } catch (Exception ex)
+            {
+
+            }
         }
 
         public override void Vacate(Vehicle vehicle)
