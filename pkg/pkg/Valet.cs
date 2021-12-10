@@ -25,7 +25,7 @@ namespace pkg
         public async void Drive(Vehicle vehicle)
         {
             _available = false;
-            await Task.Delay(5 * 60 * 1000);
+            await Task.Delay((int)(vehicle.Size * 2 * 1000));
             _available = true;
         }
 
